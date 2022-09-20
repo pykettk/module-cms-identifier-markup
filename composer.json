@@ -1,7 +1,7 @@
 {
-    "name": "element119/module-name",
+    "name": "element119/module-cms-identifier-markup",
     "type": "magento2-module",
-    "description": "A Magento 2 module that...",
+    "description": "A Magento 2 module that adds markup to CMS entity output to help easily identify them.",
     "license": "OSL-3.0",
     "authors": [
         {
@@ -10,11 +10,12 @@
         }
     ],
     "require": {
-        "magento/module-name": "^100.0"
+        "magento/module-cms": "^104.0",
+        "magento/module-page-builder": "^2.2"
     },
     "autoload": {
         "psr-4": {
-            "Element119\\ModuleName\\": ""
+            "Element119\\CmsIdentifierMarkup\\": ""
         },
         "files": [
             "registration.php"
