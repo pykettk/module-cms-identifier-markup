@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cms>
+            <pagebuilder>
+                <block_identifier_markup_enabled>1</block_identifier_markup_enabled>
+                <block_identifier_attribute_name>block-identifier</block_identifier_attribute_name>
+            </pagebuilder>
+        </cms>
+    </default>
+</config>

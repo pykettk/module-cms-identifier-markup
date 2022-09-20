@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="cms">
+            <group id="pagebuilder">
+                <field id="block_identifier_markup_enabled"
+                       translate="label comment"
+                       type="select"
+                       sortOrder="3000"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1"
+                       canRestore="1">
+                    <label>Add CMS Block Identifier to Markup</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        Adds an additional HTML "data-" attribute to CMS blocks for ease of identification.
+                    </comment>
+                </field>
+                <field id="block_identifier_attribute_name"
+                       translate="label comment"
+                       type="text"
+                       sortOrder="3010"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1"
+                       canRestore="1">
+                    <label>CMS Block Identifier HTML data- Attribute Name</label>
+                    <comment>
+                        Only specify the custom string i.e. everything after "data-".
+                    </comment>
+                    <validate>no-whitespace validate-no-empty validate-xml-identifier</validate>
+                    <depends>
+                        <field id="cms/pagebuilder/block_identifier_markup_enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
