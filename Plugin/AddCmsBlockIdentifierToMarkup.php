@@ -36,12 +36,15 @@ class AddCmsBlockIdentifierToMarkup
         BlockRepositoryInterface $subject,
         BlockInterface $block
     ): array {
-        if ($this->moduleConfig->isBlockIdentifierMarkupEnabled() && $block->getIdentifier()) {
+        if ($this->moduleConfig->isBlockIdentifierMarkupEnabled()
+            && ($identifier = $block->getIdentifier())
+            && ($content = $block->getContent())
+        ) {
             $block->setContent(
                 substr_replace(
-                    $block->getContent(),
-                    " data-{$this->moduleConfig->getBlockIdentifierDataAttributeName()}=\"{$block->getIdentifier()}\"",
-                    strpos($block->getContent(), ' '),
+                    $content,
+                    ' data-' . $this->moduleConfig->getBlockIdentifierDataAttributeName() . '="' . $identifier . '"',
+                    strpos($content, '<div') + 4,
                     0
                 )
             );
