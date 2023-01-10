@@ -10,8 +10,7 @@
         }
     ],
     "require": {
-        "magento/module-cms": "^104.0",
-        "magento/module-page-builder": "^2.2"
+        "magento/module-cms": "^104.0"
     },
     "autoload": {
         "psr-4": {
