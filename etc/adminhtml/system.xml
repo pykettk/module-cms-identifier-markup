@@ -41,6 +41,23 @@
                         <field id="cms/pagebuilder/block_identifier_markup_enabled">1</field>
                     </depends>
                 </field>
+                <field id="block_identifier_comment"
+                       translate="label comment"
+                       type="select"
+                       sortOrder="3020"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1"
+                       canRestore="1">
+                    <label>Use HTML Comments for non-HTML Content</label>
+                    <comment>
+                        A HTML comment will be used when the block content does not contain a wrapping HTML tag to edit.
+                    </comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="cms/pagebuilder/block_identifier_markup_enabled">1</field>
+                    </depends>
+                </field>
             </group>
         </section>
     </system>

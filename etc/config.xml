@@ -12,6 +12,7 @@
             <pagebuilder>
                 <block_identifier_markup_enabled>1</block_identifier_markup_enabled>
                 <block_identifier_attribute_name>block-identifier</block_identifier_attribute_name>
+                <block_identifier_comment>1</block_identifier_comment>
             </pagebuilder>
         </cms>
     </default>
