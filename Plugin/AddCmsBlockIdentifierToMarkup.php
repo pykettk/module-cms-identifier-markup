@@ -40,14 +40,23 @@ class AddCmsBlockIdentifierToMarkup
             && ($identifier = $block->getIdentifier())
             && ($content = $block->getContent())
         ) {
-            $block->setContent(
-                substr_replace(
-                    $content,
-                    ' data-' . $this->moduleConfig->getBlockIdentifierDataAttributeName() . '="' . $identifier . '"',
-                    strpos($content, '<div') + 4,
-                    0
-                )
-            );
+            $firstWord = strtok($content, ' ');
+
+            // if tags are removed from the first "word" and the values are not equal then we have HTML to edit
+            if (strip_tags($firstWord) !== $firstWord) {
+                $tag = explode('>', explode('<', $content)[1])[0]; // parsing HTML with PHP is gross
+
+                $block->setContent(
+                    substr_replace(
+                        $content,
+                        ' data-' . $this->moduleConfig->getBlockIdentifierDataAttributeName() . '="' . $identifier . '"',
+                        strpos($content, $tag) + strlen($tag),
+                        0
+                    )
+                );
+            } else {
+                $block->setContent('<!-- CMS identifier = ' . $identifier . ' -->' . "\n" . $content);
+            }
         }
 
         return [$block];
