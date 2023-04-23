@@ -54,7 +54,7 @@ class AddCmsBlockIdentifierToMarkup
                         0
                     )
                 );
-            } else {
+            } else if ($this->moduleConfig->useHtmlComments()) {
                 $block->setContent('<!-- CMS identifier = ' . $identifier . ' -->' . "\n" . $content);
             }
         }

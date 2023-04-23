@@ -14,6 +14,7 @@ class Config
 {
     const XML_PATH_CMS_IDENTIFIER_MARKUP_ENABLED = 'cms/pagebuilder/block_identifier_markup_enabled';
     const XML_PATH_CMS_IDENTIFIER_DATA_ATTR_NAME = 'cms/pagebuilder/block_identifier_attribute_name';
+    const XML_PATH_CMS_IDENTIFIER_HTML_COMMENT = 'cms/pagebuilder/block_identifier_comment';
 
     /** @var ScopeConfigInterface */
     private ScopeConfigInterface $scopeConfig;
@@ -48,6 +49,19 @@ class Config
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_CMS_IDENTIFIER_DATA_ATTR_NAME,
+            ScopeInterface::SCOPE_STORE,
+            $scopeCode
+        );
+    }
+
+    /**
+     * @param int|string|null $scopeCode
+     * @return bool
+     */
+    public function useHtmlComments($scopeCode = null): bool
+    {
+        return $this->scopeConfig->isSetFlag(
+            self::XML_PATH_CMS_IDENTIFIER_HTML_COMMENT,
             ScopeInterface::SCOPE_STORE,
             $scopeCode
         );
