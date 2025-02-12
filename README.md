@@ -63,15 +63,3 @@ the custom HTML `data-` attribute that contains the CMS block's identifier will 
 `CMS Block Identifier HTML data- Attribute Name` sets the name of the custom HTML `data-` attribute.
 
 ![](https://user-images.githubusercontent.com/40261741/191317592-d00ad968-ac69-4ff7-80c8-426d39e298de.png)
-
-<br>
-
----
-
-<div align="center">
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/pykettk)
-
-For those that want to support this project.
-
-</div>
